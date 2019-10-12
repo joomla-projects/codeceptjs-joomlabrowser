@@ -1,0 +1,15 @@
+{
+  "name": "codeceptjs-joomlabrowser",
+  "version": "0.0.1",
+  "description": "Joomla Browser Helper in CodeceptJS for Joomla Developers to write their system e2e tests in CodeceptJS, supports WebdriverIO, Puppeteer, Appium",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:joomla-projects/codeceptjs-joomlabrowser.git"
+  },
+  "keywords": [
+    "codeceptJS",
+    "codeceptjs",
+    "joomlaBrowser",
+    "codeceptjs-joomlabrowser"
+  ]
+}
