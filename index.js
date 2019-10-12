@@ -13,12 +13,30 @@ const supportedHelpers = [
 ];
 class JoomlaBrowser extends Helper {
 
-    async doAdministratorLogin(username, password){
+    async doAdministratorLogin(username, password) {
         const helper = this._getHelper();
-        await helper.amOnPage('/administrator/index.php');
-        await helper.fillField('#username', username);
-        await helper.fillField('#password', password);
-        await helper.click("//div[@class='login']/form/fieldset/div[4]/div/button");
+        await helper.amOnPage('joomla-cms/administrator/index.php');
+        await helper.fillField('username', username);
+        await helper.fillField('passwd', password);
+        await helper.click("Log in");
+    }
+
+    _getHelper() {
+        if (this.helpers['Puppeteer']) {
+            return this.helpers['Puppeteer'];
+        }
+
+        if (this.helpers['WebDriver']) {
+            return this.helpers['WebDriver'];
+        }
+        if (this.helpers['Appium']) {
+            return this.helpers['Appium'];
+        }
+        if (this.helpers['WebDriverIO']) {
+            return this.helpers['WebDriverIO'];
+        }
+
+        throw new Error('No matching helper found. Supported helpers: WebDriver/Appium/Puppeteer');
     }
 }
 module.exports = JoomlaBrowser;
